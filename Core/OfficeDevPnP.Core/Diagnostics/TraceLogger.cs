@@ -15,21 +15,33 @@ namespace OfficeDevPnP.Core.Diagnostics
         {
             entry.Message = entry.Message;
             Trace.TraceInformation(GetLogEntry(entry, LogLevel.Debug));
+            Log.AddtionalLogFn?.Invoke(entry.Source, $"DEBUG-{entry.Message}");
         }
 
         public void Error(LogEntry entry)
         {
             Trace.TraceError(GetLogEntry(entry, LogLevel.Error));
+
+            if (Log.AddtionalErrorLogFn != null)
+                Log.AddtionalErrorLogFn(entry.Source, $"ERROR-{entry.Message}", entry.Exception);
+            else
+                Log.AddtionalLogFn?.Invoke(entry.Source, $"ERROR-{entry.Message}");
         }
 
         public void Info(LogEntry entry)
         {
             Trace.TraceInformation(GetLogEntry(entry, LogLevel.Information));
+            Log.AddtionalLogFn?.Invoke(entry.Source, $"INFO-{entry.Message}");
         }
 
         public void Warning(LogEntry entry)
         {
             Trace.TraceWarning(GetLogEntry(entry, LogLevel.Information));
+
+            if (Log.AddtionalErrorLogFn != null)
+                Log.AddtionalErrorLogFn(entry.Source, $"WARNING-{entry.Message}", entry.Exception);
+            else
+                Log.AddtionalLogFn?.Invoke(entry.Source, $"WARNING-{entry.Message}");
         }
 
         private string GetLogEntry(LogEntry entry, LogLevel level)

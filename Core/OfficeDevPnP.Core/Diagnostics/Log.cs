@@ -31,6 +31,12 @@ namespace OfficeDevPnP.Core.Diagnostics
             set { _logger = value; }
         }
 
+        public delegate void AddtionalLog(string source, string message);
+
+        public delegate void AddtionalErrorLog(string source, string message, Exception ex = null);
+        public static AddtionalLog AddtionalLogFn { get; set; }
+        public static AddtionalErrorLog AddtionalErrorLogFn { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "OfficeDevPnP.Core.Diagnostics.LogEntry.set_Message(System.String)")]
         private static void InitializeLogger()
         {
@@ -104,9 +110,19 @@ namespace OfficeDevPnP.Core.Diagnostics
             }
         }
 
-#region Public Members
+        #region Public Members
 
-#region Error
+        public static void AdditionalLog(AddtionalLog delegateFn)
+        {
+            AddtionalLogFn = delegateFn;
+        }
+
+        public static void AdditionaErrorlLog(AddtionalErrorLog delegateFn)
+        {
+            AddtionalErrorLogFn = delegateFn;
+        }
+
+        #region Error
         /// <summary>
         /// Logs error message and source
         /// </summary>
@@ -157,9 +173,9 @@ namespace OfficeDevPnP.Core.Diagnostics
                 _logger.Error(logEntry);
             }
         }
-#endregion
+        #endregion
 
-#region Info
+        #region Info
         /// <summary>
         /// Log Information
         /// </summary>
@@ -210,9 +226,9 @@ namespace OfficeDevPnP.Core.Diagnostics
                 _logger.Info(logEntry);
             }
         }
-#endregion
+        #endregion
 
-#region Warning
+        #region Warning
         /// <summary>
         /// Warning Log
         /// </summary>
@@ -264,9 +280,9 @@ namespace OfficeDevPnP.Core.Diagnostics
                 _logger.Warning(logEntry);
             }
         }
-#endregion
+        #endregion
 
-#region Debug
+        #region Debug
         /// <summary>
         /// Debug Log
         /// </summary>
@@ -320,8 +336,8 @@ namespace OfficeDevPnP.Core.Diagnostics
                 _logger.Debug(logEntry);
             }
         }
-#endregion
+        #endregion
 
-#endregion
+        #endregion
     }
 }

@@ -114,7 +114,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                         catch (Exception ex)
                         {
                             scope.LogError(CoreResources.Provisioning_ObjectHandlers_Fields_Updating_field__0__failed___1_____2_, fieldId, ex.Message, ex.StackTrace);
-                            throw;
+                            // PF not throw exception keep working on next field
+                            //throw;
                         }
                     }
                 }

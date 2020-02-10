@@ -120,7 +120,9 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                         {
                             if (stream == null)
                             {
-                                throw new FileNotFoundException($"File {file.Src} does not exist");
+                                // Keep working if file not found
+                                //throw new FileNotFoundException($"File {file.Src} does not exist");
+                                scope.LogWarning($"File {file.Src} does not exist");
                             }
                             else
                             {

@@ -12,6 +12,10 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
@@ -34,7 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
@@ -48,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug15\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug15\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
@@ -59,7 +63,7 @@
     <DefineConstants>TRACE;ONPREMISES;SP2013</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release15\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release15\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
@@ -67,7 +71,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug16\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;ONPREMISES;SP2016</DefineConstants>
-    <DocumentationFile>bin\Debug16\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug16\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,7 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release16|AnyCPU'">
     <OutputPath>bin\Release16\</OutputPath>
     <DefineConstants>TRACE;ONPREMISES;SP2016</DefineConstants>
-    <DocumentationFile>bin\Release16\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release16\OfficeDevPnP.Core.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>1591</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -95,7 +99,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug19\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;ONPREMISES;SP2019</DefineConstants>
-    <DocumentationFile>bin\Debug19\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug19\OfficeDevPnP.Core.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,7 +110,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release19|AnyCPU'">
     <OutputPath>bin\Release19\</OutputPath>
     <DefineConstants>TRACE;ONPREMISES;SP2019</DefineConstants>
-    <DocumentationFile>bin\Release19\OfficeDevPnP.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release19\OfficeDevPnP.Core.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>1591</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -114,6 +118,9 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <Choose>
     <When Condition=" '$(Configuration)' == 'debug' Or '$(Configuration)' == 'release' ">
@@ -385,11 +392,11 @@
       <HintPath>..\packages\Microsoft.Extensions.WebEncoders.1.0.0\lib\netstandard1.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Graph, Version=1.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Graph.1.9.0\lib\net45\Microsoft.Graph.dll</HintPath>
+    <Reference Include="Microsoft.Graph, Version=1.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.1.14.0\lib\net45\Microsoft.Graph.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Graph.Core, Version=1.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Graph.Core.1.9.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
+    <Reference Include="Microsoft.Graph.Core, Version=1.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.Core.1.14.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
@@ -418,8 +425,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SharePointPnP.IdentityModel.Extensions, Version=1.2.4.0, Culture=neutral, PublicKeyToken=5e633289e95c321a, processorArchitecture=MSIL">
       <HintPath>..\packages\SharePointPnP.IdentityModel.Extensions.1.2.4\lib\net45\SharePointPnP.IdentityModel.Extensions.dll</HintPath>
@@ -1416,34 +1423,34 @@
     <None Include="Utilities\WebParts\Schema\WebPart.v3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\UPAWebService\ContactData.datasource">
+    <None Include="Web References\UPAWebService\ContactData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\GetUserProfileByIndexResult.datasource">
+    <None Include="Web References\UPAWebService\GetUserProfileByIndexResult2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\InCommonData.datasource">
+    <None Include="Web References\UPAWebService\InCommonData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\Leader.datasource">
+    <None Include="Web References\UPAWebService\Leader2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\MembershipData.datasource">
+    <None Include="Web References\UPAWebService\MembershipData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\OrganizationProfileData.datasource">
+    <None Include="Web References\UPAWebService\OrganizationProfileData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\PinnedLinkData.datasource">
+    <None Include="Web References\UPAWebService\PinnedLinkData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\PropertyData.datasource">
+    <None Include="Web References\UPAWebService\PropertyData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\PropertyInfo.datasource">
+    <None Include="Web References\UPAWebService\PropertyInfo2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\UPAWebService\QuickLinkData.datasource">
+    <None Include="Web References\UPAWebService\QuickLinkData2.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\UPAWebService\Reference.map">

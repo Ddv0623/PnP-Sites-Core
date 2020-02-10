@@ -25,13 +25,22 @@ namespace OfficeDevPnP.Core.Utilities
             }
         }
 
-        private static Lazy<String> PnPCoreVersionTagLazy = new Lazy<String>(
-            () => {
+        private static Lazy<string> PnPCoreVersionTagLazy = new Lazy<string>(
+            () =>
+            {
                 Assembly coreAssembly = Assembly.GetExecutingAssembly();
-                String result = $"PnPCore:{((AssemblyFileVersionAttribute) coreAssembly.GetCustomAttribute(typeof(AssemblyFileVersionAttribute))).Version.Split('.')[2]}";
+
+                string coreAssemblyVersion = ((AssemblyFileVersionAttribute)coreAssembly.GetCustomAttribute(typeof(AssemblyFileVersionAttribute))).Version;
+                string result = $"PnPCore:{coreAssemblyVersion}";
+
+                string[] arrayStr = coreAssemblyVersion.Split('.');
+                if (arrayStr.Length >= 3)
+                {
+                    result = $"PnPCore:{arrayStr[2]}";
+                }
+
                 return (result);
-            }, 
-            true);
+            }, true);
 
         /// <summary>
         /// Get's a tag that identifies the PnP Core library for UserAgent string
@@ -45,13 +54,13 @@ namespace OfficeDevPnP.Core.Utilities
             }
         }
 
-        private static Lazy<String> PnPCoreUserAgentLazy = new Lazy<String>(
-            () => {
-                Assembly coreAssembly = Assembly.GetExecutingAssembly();         
-                String result = $"NONISV|SharePointPnP|PnPCore/{((AssemblyFileVersionAttribute)coreAssembly.GetCustomAttribute(typeof(AssemblyFileVersionAttribute))).Version}";
+        private static Lazy<string> PnPCoreUserAgentLazy = new Lazy<string>(
+            () =>
+            {
+                Assembly coreAssembly = Assembly.GetExecutingAssembly();
+                string result = $"NONISV|SharePointPnP|PnPCore/{((AssemblyFileVersionAttribute)coreAssembly.GetCustomAttribute(typeof(AssemblyFileVersionAttribute))).Version}";
                 return (result);
-            },
-            true);
+            }, true);
 
         /// <summary>
         /// Returns the tenant administration url based upon the URL of the web

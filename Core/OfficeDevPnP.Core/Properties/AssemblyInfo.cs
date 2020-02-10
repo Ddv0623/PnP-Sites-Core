@@ -16,8 +16,8 @@ using System.Runtime.InteropServices;
 #else
 [assembly: AssemblyDescription("Office Dev PnP Core library for SharePoint Online")]
 #endif
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OfficeDevPnP.Core")]
+[assembly: AssemblyCompany("PF")]
+[assembly: AssemblyProduct("PF.OfficeDevPnP.Core")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -46,6 +46,6 @@ using System.Runtime.InteropServices;
 // Third part = version indenpendant showing the release month in YYMM
 // Fourth part = 0 normally or a sequence number when we do an emergency release
 [assembly: AssemblyVersion("3.17.2001.0")]
-[assembly: AssemblyFileVersion("3.17.2001.0")]
+[assembly: AssemblyFileVersion("1.0")]
 
 [assembly: InternalsVisibleTo("OfficeDevPnP.Core.Tests")]
